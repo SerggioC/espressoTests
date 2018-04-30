@@ -94,6 +94,8 @@ public class IdlingResourceMenuActivityTest {
     // DONE (8) Unregister resources when not needed to avoid malfunction
     @After
     public void unregisterIdlingResource() {
-        IdlingRegistry.getInstance().unregister(mIdlingResource);
+        if (mIdlingResource != null) {
+            IdlingRegistry.getInstance().unregister(mIdlingResource);
+        }
     }
 }
